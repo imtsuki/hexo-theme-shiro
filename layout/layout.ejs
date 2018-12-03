@@ -1,0 +1,64 @@
+
+<%
+var pageTitle = page.title || config.subtitle || '';
+if (is_archive()) pageTitle = 'Archives';
+if (is_tag()) pageTitle = 'Tag: ' + page.tag;
+if (is_category()) pageTitle = 'Category: ' + page.category;
+if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
+if (is_year()) pageTitle += ': ' + page.year;
+pageTitle += ' [ ' + config.title + ' ]';
+%>
+
+<!DOCTYPE html>
+<html lang="<%=config.language%>">
+<head>
+  <meta charset="UTF-8">
+  <title><%=pageTitle%></title>
+  <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
+    <!-- stylesheets list from _config.yml -->
+    <% theme.stylesheets.forEach(url => { %>
+      <link rel="stylesheet" href="<%=url%>">
+    <% }); %>
+  <% } %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div id="header">
+  <a href="<%=config.root%>">
+    <div id="title">
+      <h1>ツキの月</h1>
+    </div>
+  </a>
+</div>
+
+<div id="menu-outer">
+  <div id="menu-inner">
+    <% Object.keys(theme.menu).forEach(key => { %>
+      <a href="<%=theme.menu[key]%>"><%=key%></a>
+    <% }); %>
+  </div>
+</div>
+
+<div id="content-outer">
+  <div id="content-inner" class="content typo">
+    <%- body %>
+  </div>
+</div>
+
+<div id="bottom-outer">
+  <div id="footer">
+      Copyright © <%=date(Date.now(), 'YYYY')%> <%=config.author%>. Powered by Hexo and Shiro.
+  </div>
+</div>
+
+<% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
+  <!-- scripts list from theme config.yml -->
+  <% theme.scripts.forEach(url => { %>
+    <script src="<%=url%>"></script>
+  <% }); %>
+<% } %>
+
+</body>
+</html>
