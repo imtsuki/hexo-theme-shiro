@@ -13,6 +13,15 @@ pageTitle += ' [ ' + config.title + ' ]';
 <html lang="<%=config.language%>">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="HandheldFriendly" content="true">
+  <% if (theme.google_site_verification.enable === true) { %>
+    <meta name="google-site-verification" content="<%=theme.google_site_verification.verification_code%>">
+  <% } %>
+  <% if (theme.baidu_site_verification.enable === true) { %>
+    <meta name="baidu-site-verification" content="<%=theme.baidu_site_verification.verification_code%>">
+  <% } %>
   <title><%=pageTitle%></title>
   <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
     <!-- stylesheets list from _config.yml -->
@@ -49,7 +58,7 @@ pageTitle += ' [ ' + config.title + ' ]';
 
 <div id="bottom-outer">
   <div id="footer">
-      Copyright © <%=date(Date.now(), 'YYYY')%> <%=config.author%>. Powered by Hexo and Shiro.
+      Copyright © <%=date(Date.now(), 'YYYY')%> <%=config.author%>. Powered by Hexo and <a href="https://github.com/imtsuki/hexo-theme-shiro">Shiro</a>.
   </div>
 </div>
 

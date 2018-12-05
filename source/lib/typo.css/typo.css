@@ -257,18 +257,27 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 在文章中，应该还原 ul 和 ol 的样式 */
 .typo ul, .typo-ul {
-  margin-left: 1.3em;
   list-style: disc;
 }
+@media (min-width: 600px) {
+  .typo ul, .typo-ul {
+    margin-left: 1.3em;
+  }
 
+  .typo ol, .typo-ol {
+    margin-left: 1.9em;
+  }
+
+.typo li ul, .typo li ol, .typo-ul ul, .typo-ul ol, .typo-ol ul, .typo-ol ol {
+    margin-left: 2em;
+  }
+}
 .typo ol, .typo-ol {
   list-style: decimal;
-  margin-left: 1.9em;
 }
 
 .typo li ul, .typo li ol, .typo-ul ul, .typo-ul ol, .typo-ol ul, .typo-ol ol {
   margin-bottom: 0.8em;
-  margin-left: 2em;
 }
 
 .typo li ul, .typo-ul ul, .typo-ol ul {
@@ -292,6 +301,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .typo table caption {
   border-bottom: none;
+}
+
+.typo table {
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
 }
 
 /* 去除 webkit 中 input 和 textarea 的默认样式  */

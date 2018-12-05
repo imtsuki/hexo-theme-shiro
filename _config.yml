@@ -13,10 +13,21 @@ stylesheets:
 - /css/layout.css
 - /css/post.css
 - /css/content.css
+- /css/highlight.css
 - /lib/soraka/soraka.css
 - /lib/typo.css/typo.css
+
+# SEO
+google_site_verification:
+  enable: true
+  verification_code:
+
+baidu_site_verification:
+  enable: true
+  verification_code:
+
+
 
 # scripts loaded in the end of the body
 scripts:
 - /js/shiro.js
-
