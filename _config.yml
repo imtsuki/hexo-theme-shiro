@@ -1,13 +1,11 @@
 
 # html lang
-language: en
+language: zh-cn
 
 # main menu navigation
 menu:
   Home: /
   About: /about
-  Contact: /contact
-  Archives: /archives
 
 # stylesheets loaded in the <head>
 stylesheets:
