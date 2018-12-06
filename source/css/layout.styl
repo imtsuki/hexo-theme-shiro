@@ -2,6 +2,12 @@ html
   height 100%
   font-size 18px
 
+@media (max-width: 767px)
+  html
+    margin-left 1.5rem !important
+    margin-right 1.5rem !important
+
+
 body
   border-top 2px solid black
   text-rendering geometricPrecision
@@ -20,7 +26,7 @@ body
   text-align center
 
 #title h1
-  font-family Soraka, "Source Han Serif SC", serif !important
+  font-family Soraka, "Source Han Serif SC", source-han-serif-sc, serif !important
 
 #menu-outer
   text-align center
@@ -42,6 +48,19 @@ a
   min-width 200px
   margin-right 16px
   font-size 14px
+
+article header .meta
+  color #ccc !important
+  text-decoration none !important
+  text-transform uppercase
+  font-variant small-caps
+  .page-date:after
+    content "|"
+  a
+    background-image none !important
+    color #ccc !important
+    
+
 
 #paginator
   text-align center

@@ -6,13 +6,34 @@ if (is_tag()) pageTitle = 'Tag: ' + page.tag;
 if (is_category()) pageTitle = 'Category: ' + page.category;
 if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
 if (is_year()) pageTitle += ': ' + page.year;
-pageTitle += ' [ ' + config.title + ' ]';
+if (pageTitle !== '') pageTitle += ' | ';
+pageTitle += config.title;
 %>
 
 <!DOCTYPE html>
 <html lang="<%=config.language%>">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="HandheldFriendly" content="true">
+  <% if (theme.google_site_verification.enable === true) { %>
+    <meta name="google-site-verification" content="<%=theme.google_site_verification.verification_code%>">
+  <% } %>
+  <% if (theme.baidu_site_verification.enable === true) { %>
+    <meta name="baidu-site-verification" content="<%=theme.baidu_site_verification.verification_code%>">
+  <% } %>
+  <script>
+  (function(d) {
+    var config = {
+      kitId: 'xoy5jfw',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+  </script>
   <title><%=pageTitle%></title>
   <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
     <!-- stylesheets list from _config.yml -->
@@ -49,7 +70,7 @@ pageTitle += ' [ ' + config.title + ' ]';
 
 <div id="bottom-outer">
   <div id="footer">
-      Copyright © <%=date(Date.now(), 'YYYY')%> <%=config.author%>. Powered by Hexo and Shiro.
+      Copyright © <%=date(Date.now(), 'YYYY')%> <%=config.author%>. Powered by Hexo and <a href="https://github.com/imtsuki/hexo-theme-shiro">Shiro</a>.
   </div>
 </div>
 
