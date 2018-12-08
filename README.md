@@ -1,3 +1,5 @@
-# <h1 style="text-align: center; font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif; font-weight: 100">SHIRO</h1>
+#  Shiro・シロ
 
 自用 Hexo 主题。
+
+[My Blog](https://qjx.app)
